@@ -21,5 +21,7 @@ app.get('/', function(req, res) {
 io.on('connection', function(socket) {
 	socket.on('chatter', function(message) {
 		console.log('message : ' + message);
+
+		io.emit('chatter', message);
 	});
 });

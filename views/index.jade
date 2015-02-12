@@ -19,3 +19,7 @@ html
 				$('#message').val('');
 				return false;	
 			});
+
+			socket.on('chatter', function(message) {
+				$('#chat-box ul').append($('<li>').text(message));
+			});
