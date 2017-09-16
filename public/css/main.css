@@ -1,51 +1,11 @@
 body {
-	background: #2196f3;
+	font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 
-.container {
-	width: 100%;
-	max-width: 960px;
-	margin: 0 auto;
+form {
+	margin-top: 0.75rem;
 }
 
-.container h1 {
-	margin-top: 100px;
-	text-align: center;
-	color: #fff;
-}
-
-#chat-box {
-  background-color: #bbdefb;
-  padding: 15px;
-}
-
-ul {
-	list-style: none;
-	padding: 0;
-}
-
-ul li {
-	background: #f5f5f5;
-	padding: 10px;
-}
-
-ul li:nth-child(odd) {
-	background: #fff;
-}
-
-form input {
-	background: #f5f5f5;
-	width: 85%;
-	padding: 10px;
-	border: 1px solid #d5d5d5;
-}
-
-form button {
-	background: #ff4081;
-	color: #fff;
-	font-weight: bold;
-	border: none;
-	width: 10%;
-	padding: 10px;
-	margin-left: 20px;
+#chat-messages li {
+	padding: 0.75rem;
 }

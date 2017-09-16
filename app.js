@@ -1,27 +1,30 @@
-var express = require('express');
-var app = express();
-var path = require('path');
+const express = require('express')
+const app = express()
+const path = require('path')
 
-var server = app.listen(5555, function() {
-	console.log('Program running on port : 5555');
-});
-var io = require('socket.io').listen(server);
+const APP_PORT = 5555
+
+const server = app.listen(APP_PORT, () => {
+  console.log(`App running on port ${APP_PORT}`)
+})
+
+const io = require('socket.io').listen(server)
 
 // ตั้งค่า เพื่อให้ express ทำการ render view ที่โฟลเดอร์ views
-// และใช้ template engine เป็น jade
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+// และใช้ template engine เป็น pug
+app.set('views', path.join(__dirname, 'views'))
+app.set('view engine', 'pug')
 
-app.use(express.static('public'));
+app.use(express.static('public'))
 
-app.get('/', function(req, res) {
-	res.render('index');
-});
+app.get('/', (req, res) => {
+  res.render('index')
+})
 
-io.on('connection', function(socket) {
-	socket.on('chatter', function(message) {
-		console.log('message : ' + message);
-
-		io.emit('chatter', message);
-	});
-});
+io.on('connection', (socket) => {
+  console.log('a user connected')
+  socket.on('chatter', (message) => {
+    console.log('chatter : ', message)
+    io.emit('chatter', message)
+  })
+})
