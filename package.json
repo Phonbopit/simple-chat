@@ -4,7 +4,7 @@
   "dependencies": {
     "express": "^4.15.4",
     "pug": "^2.0.0-rc.4",
-    "socket.io": "^2.0.3"
+    "socket.io": "^2.4.0"
   },
   "devDependencies": {
     "standard": "^10.0.3"
