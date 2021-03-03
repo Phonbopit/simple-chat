@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "dependencies": {
     "express": "^4.15.4",
-    "pug": "^2.0.0-rc.4",
+    "pug": "^3.0.1",
     "socket.io": "^2.0.3"
   },
   "devDependencies": {
